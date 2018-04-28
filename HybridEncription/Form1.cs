@@ -52,6 +52,7 @@ namespace HybridEncription
             priv_key = csp.ExportParameters(true); // export private key
 
             comboBoxMode.SelectedIndex = 0;
+            setAesMode();
 
             updateBobKeys();
         }
@@ -264,7 +265,10 @@ namespace HybridEncription
         void setAesMode()
         {
             AES.cipherMode = aesMode;
-            
+            var text = "2.Encrypt message AES (mode " + aesMode + ")";
+            buttonEncryptAes.Text = text;
+            var text2= "6. Decrypt message AES (mode " + aesMode + ")";
+            buttonDecryptMessageAes.Text = text2;
         }
     }
 }
